@@ -1,0 +1,10 @@
+{% extends 'main.html' %}
+
+{% block user %}
+    <h1>Check</h1>
+{% for u in object_list %}
+    <p><a href="/users/get/{{ u.id }}">{{ u.first_name }} {{ u.second_name }}</a></p>
+    <p>{{ u.birthday }}</p>
+    <hr>
+{% endfor %}
+{% endblock %}

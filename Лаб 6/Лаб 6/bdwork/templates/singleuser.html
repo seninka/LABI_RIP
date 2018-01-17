@@ -1,0 +1,18 @@
+{% extends 'main.html' %}
+
+{% block user %}
+<h2>{{user.first_name}} {{ user.second_name }}</h2>
+<p>{{user.group}}</p>
+<p>{{user.birthday}}</p>
+<hr>
+{% for s in servese_id %}
+    <h3>{{s.type_of_serves}}</h3>
+    <h3>{{s.price}}</h3>
+    <hr>
+{% endfor %}
+    <form action="/users/addserves/{{ user.id }}" method="post">
+    {%  csrf_token %}
+    {{ form }}
+    <input type="submit" class="button" value="добавить услугу">
+    </form>
+{% endblock %}

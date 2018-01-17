@@ -1,0 +1,10 @@
+{% extends 'testPage.html' %}
+
+{% block title %} Книга {% endblock %}
+
+{% block body %}
+<div></div>
+<div>Название книги:{{ name }}</div>
+<div>Автор книги:{{ author }}</div>
+        <a class = "btn btn-info"href="{% url 'books_url' %}">Назад</a>
+{% endblock %}

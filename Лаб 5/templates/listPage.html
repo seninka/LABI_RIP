@@ -1,0 +1,11 @@
+{% extends 'testPage.html' %}
+
+{% block title %} Список книг {% endblock %}
+
+{% block body %}
+    <ul class="list-unstyled">
+        {% for book in books %}
+            {% include "elementOfList.html" with elem=book %}
+        {% endfor %}
+    </ul>
+{% endblock %}
